@@ -3,9 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./index.js"></script>
+    <title>planB</title>
   </head>
-  <body>
-    <div>sdsd</div>
+  <body class="page">
+    <div class="new-task"></div>
+    <div class="cards_container"></div>
+    <div id="add-task" class="popup">
+      <div class="popup__container">
+        <form name="newActivities" class="task-form">
+          <h3 class="task-name">Новая задача</h3>
+          <input
+            class="form-inputs"
+            required
+            placeholder="Название"
+            name="activitiesName"
+            type="text"
+          />
+          <input required type="date" class="form-inputs" name="activitiesDate" />
+
+          <div class="option-wrapper">
+            <label class="task-options-label" for="task-options"
+              >Выберите вариант
+              <select class="new-task__options" name="activitiesVariable" id="task-options">
+                <option class="new-task__options" value="text">Текст</option>
+                <option class="new-task__options" value="task">Подзадачи</option>
+              </select>
+            </label>
+
+            <label class="task-options-label" for="tag"
+              >Присвоить тег
+              <select class="new-task__options" name="activitiesTag" id="tag">
+                <option class="new-task__options" value="no">Без тега</option>
+                <option class="new-task__options" value="personal">Личное</option>
+                <option class="new-task__options" value="study">Учеба</option>
+                <option class="new-task__options" value="work">Работа</option>
+                <option class="new-task__options" value="home">Домашние дела</option>
+              </select>
+            </label>
+          </div>
+
+          <textarea
+            maxlength="288"
+            required
+            class="task-form__text"
+            name="activitiesText"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <button type="submit" class="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div id="add-choice" class="popup">
+      <div class="popup__container add-choice__container">
+        <p class="add-choice__option task">Задача</p>
+        <p class="add-choice__option event">Мероприятие</p>
+        <p class="add-choice__option meeting">Встреча</p>
+      </div>
+    </div>
+
+    <template id="cardTemplate">
+      <div class="activities">
+        <h2 class="activities__title"></h2>
+        <p class="activities__date"></p>
+        <p class="activities__text"></p>
+      </div>
+    </template>
   </body>
 </html>
