@@ -90,6 +90,10 @@ function createCard(item) {
   const activitiesName = newItem.querySelector('.activities__title');
   const activitiesDate = newItem.querySelector('.activities__date');
   const activitiesText = newItem.querySelector('.activities__text');
+  const buttonRemoveActivities = newItem.querySelector('.activities__remove');
+  buttonRemoveActivities.addEventListener('click', function () {
+    newItem.remove();
+  });
   activitiesName.textContent = item.activitiesName;
   activitiesDate.textContent = item.activitiesDate;
   activitiesText.textContent = item.activitiesText;
